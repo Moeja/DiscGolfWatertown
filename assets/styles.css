@@ -114,3 +114,26 @@ header.hero h1 {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.external-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ext-icon {
+  font-size: 0.85em;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.external-link:hover .ext-icon {
+  opacity: 1;
+}
+
+section a.external-link {
+  font-weight: 600;
+  color: #0077cc;
+}
+
