@@ -67,3 +67,18 @@ header.hero h1 {
 .layout-links li {
   margin: 0.5rem 0;
 }
+
+.contact {
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #ddd;
+  max-width: 800px;
+  border-radius: 4px;
+}
+
+.contact a {
+  color: #00c2ff;
+  font-weight: 600;
+  text-decoration: none;
+}
