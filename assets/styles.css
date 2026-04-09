@@ -1,28 +1,149 @@
+/* =========================================
+   THEME VARIABLES
+========================================= */
+:root {
+  --bg: #f7f7f7;
+  --text: #222;
+  --card-bg: #ffffff;
+  --card-border: #ddd;
+  --accent: #00c2ff;
+  --accent-dark: #0077cc;
+  --hero-bg: #f7f7f7;
+  --hero-text: #222;
+  --sponsor-gold: #d4af37;
+  --sponsor-silver: #c0c0c0;
+  --sponsor-bronze: #cd7f32;
+}
+
+.dark-theme {
+  --bg: #0d0d0d;
+  --text: #e6e6e6;
+  --card-bg: #1a1a1a;
+  --card-border: #333;
+  --accent: #4dcfff;
+  --accent-dark: #66aaff;
+  --hero-bg: #000000;
+  --hero-text: #ffffff;
+  --sponsor-gold: #b8962f;
+  --sponsor-silver: #9e9e9e;
+  --sponsor-bronze: #a86a28;
+}
+
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #f7f7f7;
-  color: #222;
+background: var(--bg);
+  color: var(--text);
 }
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
 
 header.hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: #0a0a0a;
-  color: white;
+  background: var(--hero-bg);
+  color: var(--hero-text);
 }
 
-header.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+/* Side-image hero layout */
+.hero-with-sides {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+  gap: 1rem;
 }
+
+.hero-with-sides .hero-text {
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+}
+
+/* Soft vignette behind hero text */
+.hero-with-sides .hero-text::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.side-image img {
+  width: 100%;
+  max-width: 180px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 2px solid #333;
+  var(--hero-bg)
+  padding: 0.5rem;
+}
+
+/* Mobile hero layout */
+@media (max-width: 700px) {
+  .hero-with-sides {
+    grid-template-columns: 1fr;
+  }
+
+  .side-image {
+    display: none;
+  }
+
+  .hero-text {
+    padding: 3rem 1rem;
+  }
+}
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
 
 .nav-links a {
   margin: 0 1rem;
-  color: #00c2ff;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
 }
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ext-icon {
+  font-size: 0.85em;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.external-link:hover .ext-icon {
+  opacity: 1;
+}
+
+section a.external-link {
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+/* ------------------------------
+   PAGE LAYOUT
+------------------------------ */
 
 .content {
   max-width: 800px;
@@ -37,51 +158,9 @@ header.hero h1 {
   text-align: center;
 }
 
-.sponsors-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.sponsor-card {
-  padding: 2rem;
-  background: white;
-  border: 2px solid #ddd;
-  text-align: center;
-  font-weight: 600;
-}
-
-.placeholder {
-  opacity: 0.6;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  background: #00c2ff;
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 4px;
-}
-
-.layout-links li {
-  margin: 0.5rem 0;
-}
-
-.contact {
-  margin: 3rem auto;
-  padding: 1.5rem;
-  background: #ffffff;
-  border: 2px solid #ddd;
-  max-width: 800px;
-  border-radius: 4px;
-}
-
-.contact a {
-  color: #00c2ff;
-  font-weight: 600;
-  text-decoration: none;
-}
+/* ------------------------------
+   COURSE PHOTOS
+------------------------------ */
 
 .course-photos {
   max-width: 900px;
@@ -108,56 +187,30 @@ header.hero h1 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Optional: make it a 2‑column grid on larger screens */
 @media (min-width: 700px) {
   .photo-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.external-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
+/* ------------------------------
+   SPONSORS
+------------------------------ */
 
-.ext-icon {
-  font-size: 0.85em;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
-}
-
-.external-link:hover .ext-icon {
-  opacity: 1;
-}
-
-section a.external-link {
-  font-weight: 600;
-  color: #0077cc;
-}
-
-.sponsor-card.platinum {
-  border-color: #b0b0b0;
-  background: #fafafa;
-}
-
-/* Sponsor grid layout */
 .sponsors-grid {
   display: grid;
   gap: 2.5rem;
 }
 
-/* Each tier section */
 .sponsors-grid section {
   display: grid;
   gap: 1rem;
 }
 
-/* Cards */
+/* Sponsor cards */
 .sponsor-card {
-  background: white;
-  border: 2px solid #ddd;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
   padding: 1.5rem;
   text-align: center;
   font-weight: 600;
@@ -166,60 +219,6 @@ section a.external-link {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-}
-
-/* Optional logos */
-.sponsor-card img {
-  max-width: 160px;
-  max-height: 80px;
-  object-fit: contain;
-  display: block;
-}
-
-/* Placeholder styling */
-.placeholder {
-  opacity: 0.6;
-}
-
-/* Responsive: 2-column sponsor cards on wider screens */
-@media (min-width: 700px) {
-  .sponsors-grid section {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-/* PDF logo sizing */
-.pdf-logo {
-  width: 160px;
-  height: 80px;
-  object-fit: contain;
-  border: none;
-  pointer-events: none;
-}
-
-/* Tier accent colors */
-section[data-tier="title"] .sponsor-card {
-  border-top: 4px solid #222; /* strong neutral */
-}
-
-section[data-tier="platinum"] .sponsor-card {
-  border-top: 4px solid #b0b0b0;
-  background: #fafafa;
-}
-
-section[data-tier="gold"] .sponsor-card {
-  border-top: 4px solid #d4af37;
-  background: #fffdf5;
-}
-
-section[data-tier="silver"] .sponsor-card {
-  border-top: 4px solid #c0c0c0;
-  background: #f8f8f8;
-}
-
-section[data-tier="bronze"] .sponsor-card {
-  border-top: 4px solid #cd7f32;
-  background: #fff8f3;
 }
 
 /* Consistent logo area */
@@ -246,101 +245,133 @@ section[data-tier="bronze"] .sponsor-card {
   pointer-events: none;
 }
 
-/* Banner header layout */
-.banner-header {
-  padding: 0;
-  background: #0a0a0a;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Tier accent colors */
+section[data-tier="title"] .sponsor-card {
+  border-top: 4px solid #222;
 }
 
-/* Image strip */
-.banner-images {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #111;
+section[data-tier="platinum"] .sponsor-card {
+  border-top: 4px solid #b0b0b0;
+  background: #fafafa;
 }
 
-.banner-photo {
-  height: 120px;
-  object-fit: cover;
+section[data-tier="gold"] .sponsor-card {
+  border-top: 4px solid var(--sponsor-gold);
+  background: var(--card-bg);
+}
+
+section[data-tier="silver"] .sponsor-card {
+  border-top: 4px solid var(--sponsor-silver);
+  background: var(--card-bg);
+}
+
+section[data-tier="bronze"] .sponsor-card {
+  border-top: 4px solid var(--sponsor-bronze);
+  background: var(--card-bg);
+}
+
+/* Responsive sponsor grid */
+@media (min-width: 700px) {
+  .sponsors-grid section {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* ------------------------------
+   CONTACT BOX
+------------------------------ */
+
+.contact {
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  max-width: 800px;
   border-radius: 4px;
-  border: 2px solid #333;
 }
 
-.banner-logo {
-  height: 120px;
-  object-fit: contain;
-  background: black;
-  padding: 0.5rem;
+.contact a {
+  color: #00c2ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
   border-radius: 4px;
-  border: 2px solid #333;
+}
+/* =========================================
+   iPhone-style theme toggle with icons
+========================================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
 }
 
-/* Text block below images */
-.hero-text {
-  text-align: center;
-  padding: 2.5rem 1rem;
+.theme-toggle input {
+  display: none;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 0.25rem;
-}
-/* Side-image hero layout */
-.hero-with-sides {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+.switch {
+  width: 54px;
+  height: 28px;
+  background: #555;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
+  display: flex;
   align-items: center;
-  padding: 2rem 1rem;
-  background: #0a0a0a;
-  color: white;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 0 6px;
 }
 
-.hero-with-sides .hero-text {
-  text-align: center;
-  padding: 2rem 1rem;
+.switch .icon {
+  font-size: 14px;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
-.side-image img {
-  width: 100%;
-  max-width: 180px;
-  object-fit: contain;
-  border-radius: 6px;
-  border: 2px solid #333;
-  background: black;
-  padding: 0.5rem;
+.switch::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* Left image aligns right, right image aligns left */
-.left-side {
-  display: flex;
-  justify-content: flex-end;
+/* When checked → move knob + change color + adjust icons */
+.theme-toggle input:checked + .switch {
+  background: var(--accent);
 }
 
-.right-side {
-  display: flex;
-  justify-content: flex-start;
+.theme-toggle input:checked + .switch::after {
+  transform: translateX(26px);
 }
 
-/* Mobile: stack everything cleanly */
-@media (max-width: 700px) {
-  .hero-with-sides {
-    grid-template-columns: 1fr;
-  }
-
-  .side-image {
-    display: none;
-  }
-
-  .hero-text {
-    padding: 3rem 1rem;
-  }
+.theme-toggle input:checked + .switch .sun {
+  opacity: 0.2;
 }
 
+.theme-toggle input:checked + .switch .moon {
+  opacity: 1;
+}

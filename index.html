@@ -7,8 +7,15 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header class="hero hero-with-sides">
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch" class="switch">
+    <span class="icon sun">☀️</span>
+    <span class="icon moon">🌙</span>
+  </label>
+</div>
 
+  <header class="hero hero-with-sides">
   <div class="side-image left-side">
     <img 
       src="assets/images/bramble-links-sign.jpg" 
@@ -22,16 +29,25 @@
     <p>July 18, 2026 • Watertown, South Dakota</p>
 
     <nav class="nav-links">
-      <a href="sponsors.html">Sponsors</a>
-      <a href="courses.html">Course Maps</a>
-      <a 
-        href="https://www.discgolfscene.com/tournament/2026_Watertown_Open_Presented_by_BandG_Industries_2026" 
-        target="_blank"
-        class="external-link"
-      >
-        Player Registration <span class="ext-icon">↗</span>
-      </a>
-    </nav>
+  <a href="sponsors.html">Sponsors</a>
+  <a href="courses.html">Course Maps</a>
+  <a 
+    href="https://www.pdga.com/tour/event/101397"
+    target="_blank"
+    class="external-link"
+  >
+    PDGA Event Page <span class="ext-icon">↗</span>
+  </a>
+  <a 
+    href="https://www.discgolfscene.com/tournament/2026_Watertown_Open_Presented_by_BandG_Industries_2026" 
+    target="_blank"
+    class="external-link"
+  >
+    Player Registration <span class="ext-icon">↗</span>
+  </a>
+</div>
+</nav>
+
   </div>
 
   <div class="side-image right-side">
@@ -91,6 +107,18 @@
 <footer>
   <p>© 2026 Watertown Open • Co‑Tournament Directors: Max Rieffenberger & Jacob Moe</p>
 </footer>
+
+<script>
+  const checkbox = document.getElementById("theme-switch");
+
+  // Start in dark mode
+  document.body.classList.add("dark-theme");
+  checkbox.checked = true;
+
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark-theme");
+  });
+</script>
 
 
 </body>
