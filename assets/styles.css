@@ -121,7 +121,18 @@ header.hero {
   text-decoration: none;
   font-weight: 600;
 }
-
+.layout-links a {
+  margin: 0 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.subpage-header a {
+  margin: 0 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
 .external-link {
   display: inline-flex;
   align-items: center;
@@ -307,6 +318,16 @@ section[data-tier="bronze"] .sponsor-card {
   padding: 0.75rem 1.25rem;
   background: var(--accent);
   color: black;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.udisc-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: #FF6116;
+  color: #FFFFFF;
   text-decoration: none;
   font-weight: 700;
   border-radius: 4px;
