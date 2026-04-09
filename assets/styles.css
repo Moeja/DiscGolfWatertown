@@ -245,3 +245,102 @@ section[data-tier="bronze"] .sponsor-card {
   border: none;
   pointer-events: none;
 }
+
+/* Banner header layout */
+.banner-header {
+  padding: 0;
+  background: #0a0a0a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image strip */
+.banner-images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #111;
+}
+
+.banner-photo {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid #333;
+}
+
+.banner-logo {
+  height: 120px;
+  object-fit: contain;
+  background: black;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 2px solid #333;
+}
+
+/* Text block below images */
+.hero-text {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+/* Side-image hero layout */
+.hero-with-sides {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: #0a0a0a;
+  color: white;
+  gap: 1rem;
+}
+
+.hero-with-sides .hero-text {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.side-image img {
+  width: 100%;
+  max-width: 180px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 2px solid #333;
+  background: black;
+  padding: 0.5rem;
+}
+
+/* Left image aligns right, right image aligns left */
+.left-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-side {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Mobile: stack everything cleanly */
+@media (max-width: 700px) {
+  .hero-with-sides {
+    grid-template-columns: 1fr;
+  }
+
+  .side-image {
+    display: none;
+  }
+
+  .hero-text {
+    padding: 3rem 1rem;
+  }
+}
+
