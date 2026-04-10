@@ -292,7 +292,7 @@ section a.button-external-link {
 }
 /* Image logos */
 .sponsor-card img {
-  max-width: 160px;
+  max-width: 250px;
   max-height: 80px;
   object-fit: contain;
 }
@@ -300,14 +300,14 @@ section a.button-external-link {
 /* Image logos */
 .sponsor-card-title img {
   max-width: 300px;
-  max-height: 150px;
+  max-height: 250px;
   object-fit: contain;
 }
 
 /* PDF logos */
 .sponsor-card .pdf-logo {
-  width: 160px;
-  height: 80px;
+  width: 250px;
+  height: 100px;
   object-fit: contain;
   border: none;
   pointer-events: none;
