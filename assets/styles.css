@@ -477,11 +477,6 @@ h2 {
   color: var(--text);
 }
 
-.things-details {
-  margin-top: 1.5rem;
-  line-height: 1.6;
-}
-
 .things-to-do .button {
   margin-top: 1rem;
 }
