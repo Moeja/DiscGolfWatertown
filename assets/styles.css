@@ -265,7 +265,7 @@ section a.button-external-link {
 .sponsor-card-title {
   background: var(--card-bg);
   border: 2px solid var(--card-border);
-  padding: 1.5rem;
+  padding: 0.5rem;
   text-align: center;
   font-weight: 600;
   border-radius: 6px;
@@ -352,7 +352,7 @@ section[data-tier="bronze"] .sponsor-card {
 
 .contact {
   margin: 3rem auto;
-  padding: 1.5rem;
+  padding: 0.5rem;
   background: var(--card-bg);
   border: 2px solid var(--card-border);
   max-width: 800px;
@@ -386,4 +386,102 @@ section[data-tier="bronze"] .sponsor-card {
   text-decoration: none;
   font-weight: 700;
   border-radius: 4px;
+}
+
+/* Local Disc Golf Store Section */
+.disc-cave {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  padding: 2rem;
+  border-radius: 6px;
+  margin-top: 3rem;
+}
+
+.disc-cave h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.disc-cave p {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.disc-cave .button {
+  margin-top: 1rem;
+}
+
+h2 {
+	margin-left: -1rem;
+	font-size: 26px;
+}
+
+/* Disc Cave Section with Image */
+.disc-cave {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  padding: 2rem;
+  border-radius: 6px;
+  margin-top: 3rem;
+}
+
+.disc-cave h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.disc-cave-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.disc-cave-text {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.disc-cave-photo img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 6px;
+  border: 3px solid var(--card-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Side-by-side layout on larger screens */
+@media (min-width: 700px) {
+  .disc-cave-layout {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* Things to Do Section */
+.things-to-do {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  padding: 2rem;
+  border-radius: 6px;
+  margin-top: 3rem;
+}
+
+.things-to-do h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.things-to-do p {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.things-details {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.things-to-do .button {
+  margin-top: 1rem;
 }
