@@ -197,5 +197,23 @@
   <p>© 2026 Watertown Open • Co‑Tournament Directors: Max Rieffenberger & Jacob Moe</p>
 </footer>
 
+<button id="toTopBtn" title="Go to top">↑ Top</button>
+
+<script>
+  const toTopBtn = document.getElementById("toTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
 </body>
 </html>
